@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Pocket Alex Hormozi</title>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body style="background: #000;">
+        <div class="container">
+            <div class="login">
+    	        <h1>Pocket Alex Hormozi</h1>
+                <!-- Main Input For Receiving Query to our ML -->"C:\dev\alex_hormozi_flask_app\app.py"
+                <form action="{{ url_for('predict')}}"method="post">
+    	    	    <input type="text" name="input" placeholder="Ask your question here!" required="required" />
+                    <button type="submit" class="btn">Get an Answer from all knowing pocket Hormozi</button>
+                </form>
+                {% if prediction_text %}
+                <div class="text">
+                    {{ prediction_text }}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+    </body>
+</html>
